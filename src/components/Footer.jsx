@@ -1,6 +1,9 @@
 function Footer() {
-   
-    return (<h4> Hey,this is footer </h4>)
+  return (
+    <footer>
+      <h4> https://github.com/AnjanaHp/Apartment-Rental </h4>
+    </footer>
+  );
 }
 
 export default Footer;

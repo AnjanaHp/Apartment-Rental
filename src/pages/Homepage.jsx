@@ -7,12 +7,8 @@ function App() {
   return (
     <>
       <Navbar />
-      
-      
       <Sidebar />
       <Footer />
     </>
   );
 }
-
-export default App;

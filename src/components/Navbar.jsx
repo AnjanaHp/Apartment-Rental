@@ -1,11 +1,11 @@
-
+import logo from '../assets/logo.png'
 
 function Navbar() {
    
     return (
         <nav>
         
-        <img src ="https://dummyimage.com/300" alt="logo" /> <br/>
+        <img src ={logo} alt="logo" /> <br/>
         <h1> Luxe Living </h1>
         </nav>
     
