@@ -1,0 +1,33 @@
+:root {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+nav{
+  width: 100%;
+  position:absolute;
+  display:flex;
+  justify-content:space-evenly;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.43);
+  top:0px;
+  border:2px solid black;
+  margin:0px;
+  max-height: 10%;
+  overflow: hidden;
+
+}
+h1{
+  text-align: center;
+}
