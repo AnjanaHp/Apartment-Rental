@@ -1,10 +1,12 @@
 import listings from "../data/listings.json";
 import { useState } from "react";
 import './ListItem.css'
+import { Link } from 'react-router-dom';
 
 
 
-function List() {
+
+function ListItem() {
   
     const [listingToDisplay, setListingToDisplay] = useState(listings);
 
@@ -28,6 +30,12 @@ function List() {
             <p>{listing.host_location}</p>
             <p>Is superhost: {listing.host_is_superhost ? 'True' : 'False'}</p>
             <button onClick={() => deleteListing(listing.id)}> Delete this listing 🗑️</button>
+
+            <Link to={`/listing/${listing.id}`} >
+            <button>More details</button> 
+            </Link>
+
+        
           </div>
         );
       })}
@@ -36,4 +44,4 @@ function List() {
   );
 }
 
-export default List;
+export default ListItem;

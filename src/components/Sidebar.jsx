@@ -1,15 +1,19 @@
-
+import DashboardPage from "../pages/DashboardPage";
+import AboutPage from "../pages/AboutPage";
+import { Link } from "react-router-dom";
 
 
 function Sidebar() {
    
     return (
     <div className="side">
-        <h2>Home</h2>
-        <h2>About us</h2>
-    {/* <Link to="/">Home</Link> */}
-    {/* <Link to="/about">About</Link>  */}
-    </div>)
+        <button> Home  </button>
+        <button> About us  </button>
+        
+     {/*<Link to="/"> {Home} </Link> 
+     <Link to="/about"> {About} </Link>  */}
+    </div>
+    )
 }
 
 export default Sidebar;
