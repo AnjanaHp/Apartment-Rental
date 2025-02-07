@@ -1,8 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './ItemDetailsPage.css';
+import EditingForm from '../components/EditingForm';
 
-function ItemDetailsPage({ listings }) {
+
+function ItemDetailsPage({ listings, onUpdateListing }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const [imageError, setImageError] = useState(false);
@@ -29,6 +31,11 @@ function ItemDetailsPage({ listings }) {
 
     const handleImageError = () => {
         setImageError(true);
+    };
+
+    const handleUpdate = (updatedListing) => {
+        onUpdateListing(updatedListing);
+        console.log('Updating listing:', updatedListing);
     };
 
     return (
@@ -75,6 +82,7 @@ function ItemDetailsPage({ listings }) {
                     <p className="facilities">{currentListing.amenities}</p>
                 </div>
             </div>
+            <EditingForm listing={currentListing} onSubmit={handleUpdate} />
         </div>
     );
 }
