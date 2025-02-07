@@ -7,8 +7,10 @@ function Sidebar() {
    
     return (
     <div className="side">
-        <button> Home  </button>
-        <button> About us  </button>
+       { <Link to ="/">
+        <button>  Home  </button>    </Link> }
+       {<Link to ="/about">
+        <button>  About us  </button> </Link> } 
         
      {/*<Link to="/"> {Home} </Link> 
      <Link to="/about"> {About} </Link>  */}
