@@ -12,6 +12,9 @@ import listings from './data/listings.json';
 
 
 function App() {
+
+
+  
   return (
     
     <>
@@ -23,6 +26,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/listing/:id" element={<ItemDetailsPage listings={listings} />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<p>Page not found</p>} />
       </Routes>
     </div>
     <Footer />

@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import './Form.css';
 
 
-function Form () {
+function Form ({ callbackToCreate }) {
 
     const [name, setName] = useState('');
     const [city, setCity] = useState('');
@@ -17,13 +18,13 @@ function Form () {
         const listingDetails = {
             name: name,
             city: city,
-            price: price,
+            price: Number(price),
             imgURL: imageURL,
             description: description,
-            amenities: amenities.split(',').map(g => g.trim()) // Convert comma-separated string to array
+            amenities: amenities.split(',').map(g => g.trim())
         };
         
-        props.callbackToCreate(listingDetails);
+        callbackToCreate(listingDetails);
         
         // Clear form after submission
         setName('');
@@ -35,7 +36,7 @@ function Form () {
     }
 
     return (
-        <div>
+        <div className="form-container">
             <h1>Add Listing</h1>
             <form onSubmit={handleSubmit}>
                 <input 

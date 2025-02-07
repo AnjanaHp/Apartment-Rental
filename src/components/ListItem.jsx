@@ -1,37 +1,30 @@
-import listings from "../data/listings.json";
-import { useState } from "react";
 import './ListItem.css'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import Form from './Form';
 
-
-
-
-function ListItem() {
-  
-   
-
+function ListItem({ listings, onDelete }) {
   return (
     <div className="home">
-    
-      
-      {listingToDisplay.map((listing) => {
+      {listings.map((listing) => {
         return (
           <div key={listing.id} className="card">
-            <h2> {listing.name} </h2>
-            <img className="pic"  src={listing.picture_url} alt="listing image" />
-            <p><b>{listing.host_location} </b></p>
+            <h2>{listing.name}</h2>
+            <img 
+              className="pic" 
+              src={listing.picture_url || listing.imgURL}
+              alt="listing image" 
+            />
+            <p><b>{listing.host_location || listing.city}</b></p>
             <p>Superhost: {listing.host_is_superhost ? 'Yes' : 'No'}</p>
-            <button onClick={() => deleteListing(listing.id)}> Delete this listing 🗑️</button>
+            <button onClick={() => onDelete(listing.id)}>Delete this listing 🗑️</button>
 
-            <Link to={`/listing/${listing.id}`} >
-            <button>More details</button> 
+            <Link to={`/listing/${listing.id}`}>
+              <button>More details</button> 
             </Link>
-
-        
           </div>
         );
       })}
-      
     </div>
   );
 }
