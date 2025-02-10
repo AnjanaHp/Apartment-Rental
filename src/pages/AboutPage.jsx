@@ -31,12 +31,21 @@ The platform includes detailed property listings, high-quality images, and revie
 <h2> Meet the team:-</h2>
 
 <div>
-    <p> <b> Anjana Hariprasad:  </b>  Github <Link to ="https://github.com/AnjanaHp"></Link> </p>
+    <p> <b> Anjana Hariprasad:  </b>  <a href ="https://github.com/AnjanaHp" target="_blank"> 
+     Github </a>
+    <a href ="https://www.linkedin.com/in/anjana-hariprasad-160a0465/" target="_blank"> 
+     LinkedIn </a>
+     </p>
 </div>
 
 <div>
-    <p> <b> George Lam:  </b> Github 
-    <Link to="https://github.com/Fantastic-George"></Link></p>
+    <p> <b> George Lam:  </b> 
+   
+    <a href ="https://github.com/Fantastic-George" target="_blank"> 
+     Github </a>
+    <a href ="https://www.linkedin.com/in/georgewlam" target="_blank"> 
+     LinkedIn </a>
+    </p>
 </div>
 
 </>
