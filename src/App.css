@@ -1,44 +1,82 @@
-
-nav{
+/* Navbar - Making it warmer and more inviting */
+nav {
   width: 100%;
-  position:absolute;
-  display:flex;
-  justify-content:space-evenly;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.43);
-  border:2px solid black;
-  margin:0px;
-  max-height: 10%;
-  overflow: hidden;
+  background-color: #ffffff; /* Pure white for better contrast */
+  border-bottom: 1px solid #ffe4e6; /* Subtle pink border */
+  padding: 1rem 2rem;
+  height: 80px;
+  box-shadow: 0 2px 8px rgba(244, 63, 94, 0.05); /* Soft rose shadow */
+  z-index: 1000;
   top: 0;
-
 }
 
-footer{
-display:flex;
-position: relative;
- flex: 0;
- justify-content: center;
- background-color: rgba(128, 128, 128, 0.1);
- bottom: 0;
- width: 100vw;
+/* App title - Using a warmer dark color */
+nav h1 {
+  font-size: 2.5rem;
+  color: #f43f5e; /* Rose color for brand emphasis */
+  margin: 0;
+  text-align: center;
 }
 
-.side{
-  
+/* Footer - Lighter and consistent with the theme */
+footer {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff1f2; /* Very light rose background */
+  border-top: 1px solid #ffe4e6; /* Matching the navbar border */
+  padding: 1rem;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  z-index: 1000;
+}
+
+/* Sidebar - Warmer, more inviting color scheme */
+.side {
   position: fixed;
   left: 0;
-  top: 150px;
-  display:flex;
+  top: 80px;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content : flex-start;
-  border-radius: 5px;
-  
+  padding: 2rem 1rem;
+  background-color: #fff1f2; /* Very light rose background */
+  border-right: 1px solid #ffe4e6; /* Consistent border color */
+  height: calc(100vh - 140px);
+  width: 169px;
+  z-index: 900;
 }
-.side button{
-  width:150px;
-  font-size: 20px;
-  background-color: #4A90E2;
-  margin: 5px;
+
+/* Sidebar buttons - More modern and consistent */
+.side button {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  background-color: #f43f5e; /* Rose color for buttons */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover state - Darker shade for interaction */
+.side button:hover {
+  background-color: #e11d48; /* Darker rose on hover */
+}
+
+/* Main content area - Lighter background for better readability */
+.main-content {
+  margin-left: 200px;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  padding: 2rem;
+  min-height: calc(100vh - 140px);
+  background-color: #e1c7fb; /* Clean white background */
 }
