@@ -3,7 +3,7 @@ import Form from "../components/Form";
 import listings from '../data/listings.json';
 import { useState, useCallback } from "react";
 
-function DashboardPage() { 
+function DashboardPage() {
     const [listingsToDisplay, setListingsToDisplay] = useState(listings);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -11,6 +11,7 @@ function DashboardPage() {
     const deleteListing = useCallback((id) => {
         setIsLoading(true);
         setError(null);
+        
         try {
             const updatedListings = listingsToDisplay.filter((listing) => listing.id !== id);
             setListingsToDisplay(updatedListings);
@@ -21,13 +22,13 @@ function DashboardPage() {
             setIsLoading(false);
         }
     }, [listingsToDisplay]);
-    
+
     const createListing = useCallback((listingDetails) => {
         setIsLoading(true);
         setError(null);
         try {
             const newId = Math.max(...listingsToDisplay.map((list) => list.id), 0) + 1;
-            
+
             const newList = {
                 ...listingDetails,
                 id: newId
@@ -41,7 +42,7 @@ function DashboardPage() {
             setIsLoading(false);
         }
     }, [listingsToDisplay]);
-    
+
     if (isLoading) {
         return <div className="loading">Loading...</div>;
     }
@@ -52,10 +53,11 @@ function DashboardPage() {
 
     return (
         <div className="dashboard-container">
-            <Form callbackToCreate={createListing}/>
+            <Form callbackToCreate={createListing} />
             <ListItem listings={listingsToDisplay} onDelete={deleteListing} />
         </div>
     );
 }
 
 export default DashboardPage; 
+

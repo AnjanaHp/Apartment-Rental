@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../Components/Sidebar";
 import "./AboutPage.css";
 
 function AboutPage() {
@@ -36,14 +34,14 @@ function AboutPage() {
             <p>
               <b>Anjana Hariprasad: </b>
               <a href="https://github.com/AnjanaHp" target="_blank">Github</a>
-              <a href="https://www.linkedin.com/in/anjana-hariprasad-160a0465/" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/anjana21" target="_blank">LinkedIn</a>
             </p>
           </div>
           <div className="team-member">
             <p>
               <b>George Lam: </b>
               <a href="https://github.com/Fantastic-George" target="_blank">Github</a>
-              <a href="https://www.linkedin.com/in/george-lam" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/georgewlam/" target="_blank">LinkedIn</a>
             </p>
           </div>
         </div>

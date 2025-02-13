@@ -5,6 +5,7 @@
     margin-top: 100px;
     margin-left: 200px;
     margin-right: 200px;
+    align-items: center;
 }
 
 .listing-details {
@@ -20,7 +21,7 @@
     padding: 2rem;
     background-color: #fff;
     border-bottom: 1px solid #eee;
-    
+
 }
 
 .listing-header h1 {
@@ -40,15 +41,11 @@
 
 .image-container {
     width: 100%;
-    height: 500px;
-    overflow: hidden;
-    position: relative;
+    height: auto;
 }
 
 .listing-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .info-container {
@@ -72,23 +69,28 @@
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    grid-template-columns: 200px 400px;
+    gap: 2px;
+    margin: 5px;
 }
 
 .info-item {
     padding: 1.5rem;
-    background-color: #f8fafc;
+    background-color: #96cac1;
     border-radius: 8px;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1000px;
+    gap: 50px;
 }
 
-.label {
+.info-item label {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     font-size: 0.9rem;
-    color: #718096;
+    color: #0d0e0f;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -118,26 +120,29 @@
     margin-bottom: 1rem;
 }
 
+.facilities {
+    display: grid;
+    grid-template-columns: repeat(4, 15rem);
+    gap: 2px;
+    margin: 5px;
+}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .listing-container {
-        padding: 1rem;
-    }
+.facilities li {
+    font-size: 18px;
+    color: #333;
+    padding: 5px 0;
+    border-bottom: 1px solid #e1e1e1;
 
-    .listing-header {
-        padding: 1.5rem;
-    }
+}
 
-    .listing-header h1 {
-        font-size: 1.5rem;
-    }
-
-    .image-container {
-        height: 300px;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
+.facilities li:last-child {
+    border-bottom: none;
+}
+.update{
+    display:flex;
+    justify-content: center;
+}
+.update button{
+    background-color:rgb(58, 58, 155);
+    color:#e2e8f0;
 }

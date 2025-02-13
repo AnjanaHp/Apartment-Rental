@@ -1,7 +1,14 @@
+.list {
+ 
+  margin-left: 1500px;
+}
 .home {
-    padding: 20px;
+    padding: 10px;
     max-width: 1200px;
     margin: 80px 200px 0 ; 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;  
     
   }
   
@@ -10,15 +17,7 @@
     color: #333;
     margin-bottom: 30px;
   }
-  
-  /* Creates a grid layout for the cards */
-  .home {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;  /* Space between cards */
-  }
-  
-  /* Styles for each card */
+
   .card {
     
     border: 1px solid #ddd;
@@ -29,7 +28,7 @@
    
   }
   
-  /* Image styling */
+
   .pic {
     width: 100%;
     height: 200px;
@@ -37,8 +36,7 @@
     border-radius: 4px;
     margin: 10px 0;
   }
-  
-  /* Card content styling */
+
   .card h2 {
     color: #333;
     margin: 0 0 10px 0;
@@ -50,7 +48,7 @@
     margin: 8px 0;
   }
   
-  /* Button styling */
+
   .card button {
     width: 100%;
     padding: 8px;

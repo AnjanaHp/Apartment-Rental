@@ -1,14 +1,13 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import './ItemDetailsPage.css';
-import EditingForm from '../components/EditingForm';
 
-
-function ItemDetailsPage({ listings, onUpdateListing }) {
+function ItemDetailsPage({ listings }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const [imageError, setImageError] = useState(false);
 
+    
     if (!listings || listings.length === 0) {
         return (
             <div className="error-container">
@@ -17,9 +16,7 @@ function ItemDetailsPage({ listings, onUpdateListing }) {
             </div>
         );
     }
-
     const currentListing = listings.find(item => item.id === parseInt(id));
-
     if (!currentListing) {
         return (
             <div className="error-container">
@@ -33,19 +30,15 @@ function ItemDetailsPage({ listings, onUpdateListing }) {
         setImageError(true);
     };
 
-    const handleUpdate = (updatedListing) => {
-        onUpdateListing(updatedListing);
-        console.log('Updating listing:', updatedListing);
-    };
-
+  
     return (
         <div className="listing-container">
             <h1 className="listing-header">{currentListing.name}</h1>
             <div className="image-container">
                 {!imageError ? (
-                    <img 
-                        src={currentListing.picture_url} 
-                        alt={currentListing.name} 
+                    <img
+                        src={currentListing.picture_url}
+                        alt={currentListing.name}
                         className="listing-image"
                         onError={handleImageError}
                     />
@@ -55,34 +48,37 @@ function ItemDetailsPage({ listings, onUpdateListing }) {
             </div>
             <div className="listing-detail">
                 <p className="description">{currentListing.description}</p>
-                <div className="info-grid">
-                    <div className="info-item">
-                        <span className="label">Location:</span>
-                        <span className="value">{currentListing.host_location}</span>
-                    </div>
-                    <div className="info-item">
-                        <span className="label">Price:</span>
-                        <span className="value">{currentListing.price}</span>
-                    </div>
-                    <div className="info-item">
-                        <span className="label">Rating:</span>
-                        <span className="value">{currentListing.review_scores_rating}</span>
-                    </div>
-                    <div className="info-item">
-                        <span className="label">Superhost:</span>
-                        <span className="value">{currentListing.host_is_superhost ? 'Yes' : 'No'}</span>
-                    </div>
-                    <div className="info-item">
-                        <span className="label">Property Type:</span>
-                        <span className="value">{currentListing.property_type}</span>
-                    </div>
-                </div>
-                <div className="amenities-section">
-                    <h3>Amenities</h3>
-                    <p className="facilities">{currentListing.amenities}</p>
+
+                <div className="info-item">
+                    <label> <b> Location: </b>
+                        {currentListing.host_location ? currentListing.host_location : 'Contact host '} </label>
+
+                    <label> <b> Price: </b>
+                        {currentListing.price}</label>
+
+                    <label> <b> Rating: </b>
+                        {currentListing.review_scores_rating}</label>
+
+                    <label> <b> Superhost:  </b>
+                        {currentListing.host_is_superhost ? 'Yes' : 'No'}</label>
+
+                    <label> <b> Property Type:  </b>
+                        {currentListing.property_type}</label>
                 </div>
             </div>
-            <EditingForm listing={currentListing} onSubmit={handleUpdate} />
+            <div className="amenities-section">
+                <h3>Amenities</h3>
+                <ul className="facilities">
+                    {currentListing.amenities.map((amenity, index) => (
+                        <li key={index}>{amenity}</li>
+                    ))}
+                </ul>
+
+            </div>
+            <div className='update'>
+            {<Link to ={`/update/${id}`}>
+                <button >  Update Listing  </button>    </Link> }
+                </div>
         </div>
     );
 }

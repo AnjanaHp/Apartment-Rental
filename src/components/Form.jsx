@@ -44,7 +44,7 @@ function Form ({ callbackToCreate }) {
                     placeholder="Name" 
                     value={name} 
                     onChange={(e) => setName(e.target.value)} 
-                    required
+                    
                 />
 
                     <input 
@@ -52,30 +52,28 @@ function Form ({ callbackToCreate }) {
                     placeholder="City" 
                     value={city} 
                     onChange={(e) => setCity(e.target.value)} 
-                    required
+                    
                 />
                 <input 
-                    type="number" 
+                    type="text" 
                     placeholder="Price" 
                     value={price} 
                     onChange={(e) => setPrice(e.target.value)}
-                    min="100"
-                    max="10000"
-                    required
+                  
                 />
                 <input 
                     type="url" 
                     placeholder="Image URL" 
                     value={imageURL} 
                     onChange={(e) => setImageURL(e.target.value)}
-                    required
+                    
                 />
                 <input 
                     type="text" 
                     placeholder="Amenities (comma-separated)" 
                     value={amenities} 
                     onChange={(e) => setAmenities(e.target.value)}
-                    required
+                    
                 />
 
                     <input 
@@ -83,7 +81,7 @@ function Form ({ callbackToCreate }) {
                     placeholder="Description" 
                     value={description} 
                     onChange={(e) => setDescription(e.target.value)}
-                    required
+                    
                 />
                 <button type="submit">Add Listing</button>
             </form>
@@ -92,4 +90,3 @@ function Form ({ callbackToCreate }) {
 }
 
 export default Form;
-
